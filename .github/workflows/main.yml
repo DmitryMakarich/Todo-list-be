@@ -1,4 +1,4 @@
-name: Detail server
+name: Todo list server
 
 on:
   push:
@@ -20,7 +20,6 @@ jobs:
           echo PORT=$PORT >> .env
           echo DB_URL=$DB_URL >> .env
           echo JWT_SECRET=$JWT_SECRET >> .env
-          echo STRIPE_SECRET_TEST=$STRIPE_SECRET_TEST >> .env
           npm i
           pm2 stop 0
           pm2 start 0
@@ -30,6 +29,3 @@ jobs:
           PORT: ${{ secrets.PORT }}
           DB_URL: ${{ secrets.DB_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          STRIPE_SECRET_TEST: ${{ secrets.STRIPE_SECRET_TEST }}
-
-
